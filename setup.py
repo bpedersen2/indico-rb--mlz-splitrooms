@@ -9,7 +9,6 @@ from setuptools import find_packages, setup
 
 setup(
     name='mlz-indico-splitrooms',
-    version='2.3',
     url='https://github.com/bpedersen2/mlz-indico-splitrooms',
     license='MIT',
     author='MLZ Indico Team',
@@ -17,7 +16,10 @@ setup(
     packages=find_packages(),
     zip_safe=False,
     include_package_data=True,
+    use_scm_version={"write_to":"indico_rb_splitrooms/version.py",
+                     "local_scheme":"node-and-timestamp"}, 
     install_requires=['indico>=2.3.0'],
+    setup_requires = ["setuptools>=39", "setuptools_scm[toml]>=3.4"],
     entry_points={
         'indico.plugins': {'split_rooms=indico_rb_splitrooms.plugin:SplitRoomPlugin'},
     },
