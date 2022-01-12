@@ -14,7 +14,7 @@ from datetime import datetime, time
 
 from flask import current_app, redirect, request, session, url_for
 from marshmallow import ValidationError, fields
-from wtforms.fields.core import StringField
+from wtforms.fields import StringField
 from wtforms.validators import DataRequired
 from wtforms.widgets.core import TextArea
 
